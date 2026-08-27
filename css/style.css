@@ -127,13 +127,25 @@ ul.plain {
   padding-left: 20px;
 }
 
+.about-row {
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+  margin-bottom: 8px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-text h2:first-child { margin-top: 0; }
+
 .profile-photo {
-  float: right;
-  width: 160px;
-  height: 160px;
+  flex: 0 0 220px;
+  width: 220px;
   object-fit: cover;
   border-radius: 4px;
-  margin: 0 0 16px 24px;
   border: 1px solid var(--line);
   background: #eee;
 }
@@ -163,6 +175,7 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .profile-photo { float: none; display: block; margin: 0 0 16px; }
+  .about-row { flex-direction: column; }
+  .profile-photo { width: 100%; flex-basis: auto; height: 240px; }
   nav.site-nav ul { gap: 16px; flex-wrap: wrap; }
 }
