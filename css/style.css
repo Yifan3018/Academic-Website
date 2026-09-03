@@ -147,21 +147,21 @@ ul.plain {
 
 .about-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
   margin-bottom: 8px;
 }
 
 .about-text {
-  flex: 1;
+  flex: 0 0 60%;
   min-width: 0;
 }
 
-.about-text h2:first-child { margin-top: 0; }
+.about-text p:first-child { margin-top: 0; }
 
 .profile-photo {
-  flex: 0 0 190px;
-  width: 190px;
+  flex: 0 0 40%;
+  width: 40%;
   height: auto;
   display: block;
   border-radius: 0;
@@ -195,7 +195,8 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .about-row { flex-direction: column; }
+  .about-row { flex-direction: column; align-items: flex-start; }
+  .about-text { flex-basis: auto; width: 100%; }
   .profile-photo { width: 60%; max-width: 220px; height: auto; flex-basis: auto; margin: 0 auto 16px; }
   nav.site-nav ul { gap: 14px; flex-wrap: wrap; }
   header.site-header { padding: 40px 0 32px; }
