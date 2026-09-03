@@ -53,9 +53,9 @@ header.site-header h1 {
 }
 
 .cn-name {
-  font-family: 'LXGW WenKai TC', 'EB Garamond', serif;
+  font-family: 'Noto Serif TC', 'EB Garamond', serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2.1rem;
   color: var(--ink);
   margin-left: 10px;
 }
