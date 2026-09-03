@@ -5,7 +5,8 @@
   --accent: #7a1f2b;
   --line: #e2ddd4;
   --bg: #fdfbf7;
-  --max-width: 780px;
+  --footer-bg: #ece7dd;
+  --max-width: 740px;
 }
 
 * { box-sizing: border-box; }
@@ -15,8 +16,8 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: Georgia, 'Times New Roman', serif;
-  line-height: 1.6;
+  font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  line-height: 1.65;
 }
 
 a {
@@ -33,39 +34,40 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Header / Nav ---------- */
 header.site-header {
-  border-bottom: 1px solid var(--line);
-  padding: 32px 0 16px;
+  text-align: center;
+  padding: 56px 0 48px;
 }
 
 header.site-header h1 {
-  margin: 0 0 4px;
-  font-size: 1.7rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  margin: 0 0 6px;
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 header.site-header p.tagline {
-  margin: 0 0 18px;
+  margin: 0 0 22px;
   color: var(--muted);
-  font-size: 0.98rem;
+  font-size: 1rem;
 }
 
 nav.site-nav ul {
   list-style: none;
   display: flex;
-  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
   margin: 0;
   padding: 0;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.92rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
 }
 
 nav.site-nav a {
   color: var(--ink);
-  padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
 }
 
 nav.site-nav a.active,
@@ -75,13 +77,29 @@ nav.site-nav a:hover {
   text-decoration: none;
 }
 
+nav.site-nav .icon-link {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: none !important;
+}
+nav.site-nav .icon-link svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  transition: stroke 0.15s ease;
+}
+nav.site-nav .icon-link:hover svg { stroke: var(--accent); }
+
 /* ---------- Main content ---------- */
 main {
-  padding: 40px 0 60px;
+  padding: 8px 0 60px;
 }
 
 main h2 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   margin: 40px 0 12px;
   padding-bottom: 6px;
   border-bottom: 1px solid var(--line);
@@ -89,13 +107,13 @@ main h2 {
 main h2:first-child { margin-top: 0; }
 
 main h3 {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   margin: 20px 0 4px;
 }
 
 .meta {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   margin: 0 0 8px;
 }
 
@@ -112,14 +130,14 @@ main h3 {
 .entry-header .title { font-weight: 700; }
 .entry-header .date {
   color: var(--muted);
-  font-size: 0.9rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.92rem;
+  font-style: italic;
   white-space: nowrap;
 }
 
 .abstract {
   margin: 6px 0 0;
-  font-size: 0.96rem;
+  font-size: 1rem;
 }
 
 ul.plain {
@@ -130,7 +148,7 @@ ul.plain {
 .about-row {
   display: flex;
   align-items: flex-start;
-  gap: 28px;
+  gap: 32px;
   margin-bottom: 8px;
 }
 
@@ -146,8 +164,8 @@ ul.plain {
   width: 190px;
   height: auto;
   display: block;
-  border-radius: 4px;
-  border: 1px solid var(--line);
+  border-radius: 0;
+  border: none;
   background: #eee;
 }
 
@@ -156,8 +174,9 @@ ul.plain {
   border: 1px solid var(--accent);
   color: var(--accent);
   padding: 8px 16px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.9rem;
+  font-family: 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
   border-radius: 3px;
 }
 .button:hover {
@@ -168,15 +187,16 @@ ul.plain {
 
 /* ---------- Footer ---------- */
 footer {
-  border-top: 1px solid var(--line);
-  padding: 20px 0 40px;
+  background: var(--footer-bg);
+  padding: 16px 0;
   color: var(--muted);
   font-size: 0.85rem;
-  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 @media (max-width: 600px) {
   .about-row { flex-direction: column; }
   .profile-photo { width: 60%; max-width: 220px; height: auto; flex-basis: auto; margin: 0 auto 16px; }
-  nav.site-nav ul { gap: 16px; flex-wrap: wrap; }
+  nav.site-nav ul { gap: 14px; flex-wrap: wrap; }
+  header.site-header { padding: 40px 0 32px; }
 }
