@@ -11,9 +11,16 @@
 
 * { box-sizing: border-box; }
 
-html, body {
+html {
+  height: 100%;
+}
+
+body {
   margin: 0;
   padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   color: var(--ink);
   font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
@@ -43,6 +50,14 @@ header.site-header h1 {
   font-size: 2.1rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.cn-name {
+  font-family: 'Noto Serif TC', 'EB Garamond', serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--muted);
+  margin-left: 10px;
 }
 
 header.site-header p.tagline {
@@ -94,6 +109,7 @@ nav.site-nav .icon-link:hover svg { stroke: var(--accent); }
 
 /* ---------- Main content ---------- */
 main {
+  flex: 1 0 auto;
   padding: 8px 0 60px;
 }
 
@@ -136,8 +152,27 @@ main h3 {
 }
 
 .abstract {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   font-size: 1rem;
+}
+
+.abstract-toggle {
+  margin-top: 8px;
+}
+
+.abstract-toggle summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-style: italic;
+  font-size: 0.92rem;
+}
+
+.abstract-toggle summary::marker {
+  color: var(--accent);
+}
+
+.abstract-toggle[open] summary {
+  margin-bottom: 4px;
 }
 
 ul.plain {
@@ -187,6 +222,7 @@ ul.plain {
 
 /* ---------- Footer ---------- */
 footer {
+  flex-shrink: 0;
   background: var(--footer-bg);
   padding: 16px 0;
   color: var(--muted);
